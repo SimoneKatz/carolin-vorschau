@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Carolin Jarchow · Book (Beispiel)</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+@page{size:297mm 210mm;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#F3F0EA;color:#161616;font-family:'Inter',Arial,sans-serif;font-weight:300;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.p{width:297mm;height:210mm;position:relative;overflow:hidden;page-break-after:always;background:#F3F0EA}
+.p:last-child{page-break-after:auto}
+.k{font-size:8pt;letter-spacing:.26em;text-transform:uppercase;color:#8B867E}
+.nr{position:absolute;bottom:9mm;right:14mm;font-size:7.5pt;letter-spacing:.2em;color:#8B867E}
+.nm{position:absolute;bottom:9mm;left:14mm;font-size:7.5pt;letter-spacing:.26em;text-transform:uppercase}
+/* Titel */
+.cover{display:grid;grid-template-columns:1fr 1fr}
+.cover .l{display:flex;flex-direction:column;justify-content:center;padding:0 16mm}
+.cover h1{font-family:'Bodoni Moda',Georgia,serif;font-weight:500;font-size:54pt;line-height:.9;letter-spacing:.01em}
+.cover .sub{margin-top:7mm;font-size:9pt;letter-spacing:.26em;text-transform:uppercase}
+.cover .jahr{margin-top:22mm}
+.cover .r img{width:100%;height:210mm;object-fit:cover}
+/* Kapitel */
+.kap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6mm;padding:16mm 14mm 20mm}
+.kap .t{grid-column:1/-1;display:flex;align-items:baseline;gap:6mm;margin-bottom:-2mm}
+.kap .t b{font-weight:200;font-size:26pt;letter-spacing:-.01em}
+.kap img{width:100%;height:132mm;object-fit:cover}
+.duo{display:grid;grid-template-columns:1.25fr 1fr;gap:6mm;padding:16mm 14mm 20mm;align-items:end}
+.duo img{width:100%;object-fit:cover}
+.duo .a{height:170mm}
+.duo .b{height:120mm}
+.duo .cap{margin-top:3mm;font-size:8pt;letter-spacing:.14em;text-transform:uppercase;color:#8B867E}
+/* Kontakt */
+.kontakt{display:grid;grid-template-columns:1fr 1fr}
+.kontakt .l img{width:100%;height:210mm;object-fit:cover;filter:grayscale(1)}
+.kontakt .r{display:flex;flex-direction:column;justify-content:center;padding:0 18mm}
+.kontakt .mail{margin-top:6mm;font-weight:200;font-size:24pt;border-bottom:1px solid #161616;align-self:flex-start;padding-bottom:1mm}
+.kontakt .zeile{margin-top:8mm;font-size:9pt;letter-spacing:.18em;text-transform:uppercase;line-height:2}
+.kontakt .refs{margin-top:16mm;font-size:8.5pt;letter-spacing:.2em;text-transform:uppercase;color:#8B867E;line-height:1.9}
+</style>
+</head>
+<body>
+
+<section class="p cover">
+  <div class="l">
+    <div class="k">Portfolio</div>
+    <h1 style="margin-top:6mm">CAROLIN<br>JARCHOW</h1>
+    <div class="sub">Hair &amp; Make-up Artist · Hamburg / Berlin</div>
+    <div class="k jahr">Book 2026</div>
+  </div>
+  <div class="r"><img src="img/insta-04.jpg" alt=""></div>
+</section>
+
+<section class="p">
+  <div class="kap">
+    <div class="t"><span class="k">01</span><b>Natural</b></div>
+    <img src="img/insta-09.jpg" alt=""><img src="img/insta-12.jpg" alt=""><img src="img/insta-03.jpg" alt="">
+  </div>
+  <div class="nm">Carolin Jarchow</div><div class="nr">02</div>
+</section>
+
+<section class="p">
+  <div class="duo">
+    <div><div class="k" style="margin-bottom:4mm">02 · Beauty</div><img class="a" src="img/insta-01.jpg" alt=""></div>
+    <div><img class="b" src="img/insta-06.jpg" alt=""><div class="cap">Client · Photographer · Magazine</div></div>
+  </div>
+  <div class="nm">Carolin Jarchow</div><div class="nr">03</div>
+</section>
+
+<section class="p">
+  <div class="kap">
+    <div class="t"><span class="k">03</span><b>Fashion &amp; Hair</b></div>
+    <img src="img/insta-05.jpg" alt=""><img src="img/insta-08.jpg" alt=""><img src="img/insta-10.jpg" alt="">
+  </div>
+  <div class="nm">Carolin Jarchow</div><div class="nr">04</div>
+</section>
+
+<section class="p kontakt">
+  <div class="l"><img src="img/carolin-portrait-about.jpg" alt=""></div>
+  <div class="r">
+    <div class="k">Bookings</div>
+    <div class="mail">mail@carolinjarchow.com</div>
+    <div class="zeile">+49 173 495 24 29<br>Agency 70seven<br>carolinjarchow.com · @carolinjarchow</div>
+    <div class="refs">Vogue · Grazia · Glamour · Stern · Gala<br>Zalando · Mytheresa · Nivea · Swarovski · Douglas</div>
+  </div>
+</section>
+
+</body>
+</html>

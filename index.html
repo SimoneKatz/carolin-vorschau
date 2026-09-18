@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Carolin Jarchow · Hair & Make-up Artist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F0EA; --paper-2:#EAE6DE; --ink:#161616; --grey:#8B867E; --line:#D9D3C8;
+  --serif:'Bodoni Moda', 'Didot', Georgia, serif;
+  --sans:'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+/* Ruhige Fassung: überall schlichte Schrift, Bodoni nur sparsam */
+.light{font-family:var(--sans);font-weight:200;letter-spacing:-.01em}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+section{scroll-margin-top:80px}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{padding-inline:clamp(18px,4vw,56px)}
+.kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey)}
+
+/* Header */
+header{position:sticky;top:0;z-index:40;background:rgba(243,240,234,.88);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.scrolled{border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:80px;gap:20px}
+.brand{font-family:var(--sans);font-weight:400;font-size:clamp(17px,1.6vw,23px);letter-spacing:.26em;text-transform:uppercase;color:inherit;text-decoration:none}
+.menu{display:flex;gap:clamp(14px,2.4vw,34px);align-items:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.menu a{color:inherit;text-decoration:none;position:relative}
+.menu a::after{content:"";position:absolute;left:0;right:100%;bottom:-3px;height:1px;background:currentColor;transition:right .35s}
+.menu a:hover::after{right:0}
+.lang{display:flex;gap:6px;color:var(--grey)}
+.lang button{letter-spacing:.14em;font-size:12px;color:var(--grey)}
+.lang button.on{color:var(--ink)}
+.brand{white-space:nowrap}
+@media (max-width:760px){.menu a.hide-m{display:none}}
+@media (max-width:480px){.brand{font-size:14px;letter-spacing:.18em}.menu a[href="#contact"]{display:none}}
+
+/* Hero A */
+.heroA{display:grid;grid-template-columns:1fr 1.05fr;height:calc(100vh - 80px);min-height:520px;align-items:stretch}
+.heroA .img img{position:absolute;inset:0}
+.heroA .txt{display:flex;flex-direction:column;justify-content:center;padding:clamp(28px,5vw,72px) clamp(18px,4vw,56px) clamp(36px,6vw,80px)}
+.heroA h1{white-space:nowrap;font-family:var(--sans);font-weight:200;font-size:clamp(28px,4.6vw,68px);line-height:1.08;letter-spacing:-.02em;margin:0 0 18px}
+.heroA .role{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--grey);margin-bottom:18px}
+.heroA h1{margin-bottom:6px}
+.heroA .seen{margin-top:40px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.heroA .img{position:relative;overflow:hidden}
+.heroA .img img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:settle 2.4s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes settle{to{transform:scale(1)}}
+.cta{display:inline-flex;gap:10px;align-items:center;margin-top:34px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:inherit;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:4px;align-self:flex-start}
+@media (max-width:860px){.heroA .seen{white-space:nowrap;font-size:10px;letter-spacing:.1em}.heroA{grid-template-columns:1fr;height:auto;min-height:0}.heroA .img{height:70vh;order:-1}}
+
+/* Hero B: der ganze Bildschirm ist das Titelblatt */
+.heroB{position:relative;height:calc(100vh - 80px);min-height:560px;overflow:hidden}
+.book{position:absolute;inset:0;perspective:2600px}
+.spread{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;background:var(--paper)}
+.spread::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:70px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,rgba(0,0,0,.06) 45%,rgba(0,0,0,.12) 50%,rgba(0,0,0,.06) 55%,transparent);pointer-events:none}
+.spread .l{overflow:hidden}
+.spread .l img{width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+.spread .r{padding:clamp(24px,6vw,110px);display:flex;flex-direction:column;justify-content:center}
+.spread .r h2{font-family:var(--sans);font-weight:200;letter-spacing:-.02em;font-size:clamp(34px,4.4vw,72px);line-height:1;margin:12px 0 26px}
+.spread .r .back{margin-top:26px;align-self:flex-start;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey)}
+.toc{list-style:none;border-top:1px solid var(--line);max-width:520px}
+.toc li{border-bottom:1px solid var(--line)}
+.toc button{width:100%;display:flex;align-items:baseline;padding:clamp(10px,1.3vw,18px) 0;font-size:clamp(16px,1.7vw,26px);font-weight:200;text-align:left;transition:padding .3s}
+.toc button span:first-child{font-size:10px;letter-spacing:.2em;color:var(--grey);width:3.4em}
+.toc button span:nth-child(2){flex:1}
+.toc button span:last-child{font-size:12px;color:var(--grey)}
+.toc button:hover{padding-left:10px}
+
+.cover{position:absolute;inset:0;z-index:3;cursor:pointer;transform-origin:left center;transform-style:preserve-3d;transition:transform 1.3s cubic-bezier(.6,.05,.25,1)}
+.book.open .cover{transform:rotateY(-178deg);pointer-events:none}
+.book.done .cover{visibility:hidden}
+.cover .face{position:absolute;inset:0;backface-visibility:hidden;overflow:hidden}
+.cover .front{background:linear-gradient(180deg,var(--paper) 0%,#E8E6E7 38%)}
+.cover .backside{transform:rotateY(180deg);background:var(--paper-2)}
+.issue{position:absolute;top:2.6%;left:clamp(18px,4vw,56px);right:clamp(18px,4vw,56px);display:flex;justify-content:space-between;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);z-index:2}
+.mast{position:absolute;left:0;right:0;top:6%;text-align:center;font-family:var(--serif);font-weight:500;color:var(--ink);font-size:min(13vw,20vh);line-height:.8;letter-spacing:.01em;z-index:2}
+.model{position:absolute;left:50%;bottom:0;height:calc(94% - min(13vw,20vh) * .8 - clamp(13px,1.35vw,22px) * 2.2 + 16px);width:auto;max-width:none;transform:translateX(-50%);z-index:1;
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 9%),linear-gradient(to right,transparent,#000 14%,#000 86%,transparent);-webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to bottom,transparent,#000 9%),linear-gradient(to right,transparent,#000 14%,#000 86%,transparent);mask-composite:intersect}
+.mast .sub{margin-top:.8em;font-family:var(--sans);font-weight:400;font-size:clamp(13px,1.35vw,22px);letter-spacing:.3em;line-height:1.4;text-transform:uppercase;white-space:nowrap}
+.cl{position:absolute;bottom:13%;z-index:2}
+.cl.left{left:clamp(18px,4vw,56px)}
+.cl.right{right:clamp(18px,4vw,56px);text-align:right}
+.cl .big{font-weight:200;font-size:clamp(28px,3.1vw,52px);line-height:1.05;letter-spacing:-.02em}
+.cl .small{margin-top:14px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey)}
+.cl.right .small{margin:0 0 10px}
+.cl .list{font-weight:300;font-size:clamp(17px,1.6vw,26px);line-height:1.35}
+.open-btn{position:absolute;left:50%;bottom:4.5%;transform:translateX(-50%);z-index:2;background:var(--paper);border:1px solid var(--ink);padding:11px 22px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;transition:background .3s,color .3s}
+.open-btn:hover{background:var(--ink);color:var(--paper)}
+@media (max-width:760px){
+  .heroB{height:auto;min-height:0;overflow:visible}
+  .book{position:relative}
+  .cover{position:relative;height:calc(100svh - 80px);min-height:560px}
+  .book.open .cover{display:none}
+  .spread{position:relative;display:none;grid-template-columns:1fr}
+  .book.open .spread{display:grid}
+  .spread .l{aspect-ratio:4/5}
+  .spread::after{display:none}
+  .issue span:nth-child(2){display:none}
+  .mast{font-size:18vw;top:8%}
+  .mast .sub{font-size:9px;letter-spacing:.14em}
+  .open-btn{bottom:11%}
+  .model{height:calc(92% - 18vw * .8 - 9px * 2.2 + 8px)}
+  .cl.left{top:calc(6% + 22vw);bottom:auto}
+  .cl .big{font-size:24px}
+  .cl.right{display:none}
+}
+.brand{transition:opacity .5s}
+body.cover-visible:not(.book-open) .brand{opacity:0;pointer-events:none}
+
+/* Referenzen */
+.refs{border-block:1px solid var(--line);overflow:hidden;padding-block:20px;white-space:nowrap}
+.track{display:inline-flex;gap:40px;animation:run 48s linear infinite;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#4a4641}
+.track i{font-style:normal;color:var(--grey)}
+@keyframes run{to{transform:translateX(-50%)}}
+
+/* Galerie + Filter */
+.work{padding-block:clamp(56px,9vw,120px)}
+.work-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.work-head h2{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(28px,3.2vw,44px);line-height:1}
+.filters{display:flex;flex-wrap:wrap;gap:6px 22px}
+.filters button{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);padding:6px 0;position:relative;transition:color .3s}
+.filters button::after{content:"";position:absolute;left:50%;right:50%;bottom:0;height:1px;background:var(--ink);transition:left .35s,right .35s}
+.filters button.on{color:var(--ink)}
+.filters button.on::after{left:0;right:0}
+.filters sup{font-size:9px;margin-left:3px;letter-spacing:0}
+.work{max-width:max(960px,calc((100vh - 330px) * 3.2 + 112px));margin-inline:auto;padding-top:40px!important}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;grid-auto-flow:dense}
+.tile img[src*="insta-03"]{transform:scale(1.05)}
+.tile:hover img[src*="insta-03"]{transform:scale(1.085)}
+@media (max-width:860px){.grid{grid-template-columns:repeat(2,1fr);gap:12px}}
+.tile{aspect-ratio:4/5;position:relative;overflow:hidden;cursor:pointer;transition:opacity .45s, transform .45s, filter .45s}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.tile video{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.62);transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.tile:hover img{transform:scale(1.035)}
+.tile:hover video{transform:scale(1.67)}
+.tile .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.42));color:#fff;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:.4s}
+.tile:hover .cap{opacity:1;transform:none}
+.tile.out{opacity:0;transform:scale(.96);filter:blur(4px)}
+.tile.gone{display:none}
+
+/* Geschichte zum Bild */
+.story{position:fixed;inset:0;z-index:60;background:var(--paper);display:grid;grid-template-columns:1.1fr 1fr;visibility:hidden}
+.story.show{visibility:visible}
+.story .pic{overflow:hidden;background:var(--paper-2);display:flex;align-items:center;justify-content:center;padding:clamp(16px,3vw,48px)}
+.story .pic img{max-height:100%;width:auto;object-fit:contain;opacity:0;transform:translateX(-40px) scale(.98);transition:opacity .7s, transform .9s cubic-bezier(.2,.7,.2,1)}
+.story .page{padding:clamp(28px,5vw,80px);display:flex;flex-direction:column;justify-content:center;transform-origin:left center;transform:perspective(1600px) rotateY(-24deg) translateX(60px);opacity:0;transition:transform .9s cubic-bezier(.2,.7,.2,1) .12s, opacity .6s .12s;box-shadow:-30px 0 40px -40px rgba(0,0,0,.4)}
+.story .pic{position:relative}
+.story .vbox{height:min(100%,78vh);aspect-ratio:4/5;overflow:hidden}
+.story .vbox video{width:100%;height:100%;object-fit:cover;transform:scale(1.62)}
+.story .vbox{opacity:0;transform:translateX(-40px) scale(.98);transition:opacity .7s, transform .9s cubic-bezier(.2,.7,.2,1)}
+.story.show .pic img,.story.show .vbox{opacity:1;transform:none}
+.story.show .page{opacity:1;transform:none}
+.story .no{font-size:11px;letter-spacing:.2em;color:var(--grey)}
+.story h3{font-family:var(--sans);font-weight:200;letter-spacing:-.02em;font-size:clamp(34px,4vw,60px);line-height:1.02;margin:14px 0 28px}
+.story dl{display:grid;grid-template-columns:auto 1fr;gap:10px 28px;padding-block:20px;border-block:1px solid var(--line);margin-bottom:24px}
+.story dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.story dd{font-size:14px}
+.story p{max-width:42ch;color:#3d3a36}
+.story .ph{color:var(--grey);font-style:italic}
+.story .ctrl{position:absolute;top:18px;right:22px;display:flex;gap:18px;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.story .pn{margin-top:34px;display:flex;gap:24px;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+@media (max-width:860px){.story{grid-template-columns:1fr;grid-template-rows:55vh auto;overflow:auto}.story .page{transform:translateY(30px)}}
+
+/* About */
+.about{display:grid;grid-template-columns:auto 1fr;gap:0;align-items:center;min-height:calc(100vh - 80px);padding-block:40px;border-top:1px solid var(--line)}
+.about img{filter:grayscale(1);aspect-ratio:4/5;object-fit:cover;height:calc(100vh - 160px);max-height:760px;width:auto;max-width:100%}
+.about h2{font-family:var(--sans);font-weight:200;letter-spacing:-.02em;font-size:clamp(34px,4.6vw,68px);line-height:1.02;margin:14px 0 26px}
+.about h2 em{font-style:italic}
+.about .atext{padding-left:clamp(24px,6vw,96px)}
+.about .atext .kicker{margin-bottom:22px}
+.about p{max-width:34ch;color:#3d3a36;font-size:clamp(15px,1.15vw,18px);margin-bottom:14px}
+@media (max-width:760px){.about .atext{padding-left:0!important;padding-top:24px}.about{grid-template-columns:1fr;min-height:0}.about img{height:auto;width:100%}}
+
+/* Kontakt */
+.contact{min-height:calc(100vh - 80px - 70px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-block:48px;border-top:1px solid var(--line)}
+.contact h2 em,.about h2 em,.spread .r h2 em{font-style:normal}
+.cmail{margin-top:20px;font-weight:200;font-size:clamp(28px,3.4vw,54px);letter-spacing:-.02em;line-height:1.2;color:inherit;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:4px;transition:opacity .3s}
+.cmail:hover{opacity:.65}
+.cline{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 16px;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.cline a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s}
+.cline a:hover{border-color:currentColor}
+.cline span{color:var(--grey)}
+@media (max-width:760px){.contact{min-height:0}.cmail{font-size:clamp(20px,6.4vw,28px)}}
+footer{padding-block:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
+
+/* Umschalter nur für die Vorschau */
+.switch{position:fixed;right:18px;bottom:18px;z-index:80;display:flex;align-items:center;gap:4px;padding:5px;background:#161616;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.25);font-family:Arial,sans-serif}
+.switch span{color:#bbb;font-size:12px;padding:0 10px 0 12px}
+.switch button{color:#fff;font-size:13px;padding:8px 16px;border-radius:999px;white-space:nowrap}
+.switch span{white-space:nowrap}
+@media (max-width:420px){.switch span{display:none}.switch button{padding:8px 12px;font-size:12px}}
+.switch button.on{background:#fff;color:#161616}
+[hidden]{display:none!important}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 1s, transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <div class="brand">Carolin Jarchow</div>
+    <nav class="menu">
+      <a href="#work" data-en="Work" data-de="Arbeiten">Work</a>
+      <a href="#work" class="hide-m">Commercial</a>
+      <a href="#about" class="hide-m" data-en="About" data-de="Über mich">About</a>
+      <a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a>
+      <span class="lang"><button class="on" data-lang="en">EN</button><span>/</span><button data-lang="de">DE</button></span>
+    </nav>
+  </div>
+</header>
+
+<!-- Einstieg A: schlicht -->
+<section class="heroA" id="heroA">
+  <div class="txt">
+    <div class="role" data-en="Hamburg / Berlin · worldwide" data-de="Hamburg / Berlin · weltweit">Hamburg / Berlin · worldwide</div>
+    <h1>Hair & Make-up Artist</h1>
+    <a class="cta" href="#work"><span data-en="View selected work" data-de="Arbeiten ansehen">View selected work</span> ↓</a>
+  </div>
+  <div class="img"><img src="img/insta-06.jpg" alt="Editorial portrait, hair and make-up by Carolin Jarchow"></div>
+</section>
+
+<!-- Einstieg B: Titelblatt -->
+<section class="heroB" id="heroB" hidden>
+  <div class="book" id="book">
+    <div class="spread"></div>
+    <div class="cover" id="cover" role="button" aria-label="Open the issue">
+      <div class="face front">
+        <div class="mast">JARCHOW<div class="sub">Hair &amp; Make-up Artist · Hamburg / Berlin</div></div>
+        <img class="model" src="img/insta-09.jpg" alt="Cover, hair and make-up by Carolin Jarchow">
+        <button class="open-btn" id="openBook" data-en="Open the issue →" data-de="Heft aufschlagen →">Open the issue →</button>
+      </div>
+      <div class="face backside"></div>
+    </div>
+  </div>
+</section>
+
+<div class="refs" aria-label="Clients">
+  <div class="track" id="track"></div>
+</div>
+
+<section class="work wrap" id="work">
+  <div class="work-head reveal">
+    <div>
+      <div class="kicker" data-en="Portfolio" data-de="Portfolio">Portfolio</div>
+      <h2 data-en="Selected work" data-de="Ausgewählte Arbeiten">Selected work</h2>
+    </div>
+    <div class="filters" id="filters"></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="about wrap" id="about">
+  <div><img src="img/carolin-portrait-about.jpg" alt="Carolin Jarchow"></div>
+  <div class="atext" id="atext">
+    <div class="kicker" data-en="About" data-de="Über mich">About</div>
+    <p data-en="Hair and make-up artist based in Hamburg and Berlin, working for magazines, brands and productions worldwide." data-de="Hair & Make-up Artist aus Hamburg und Berlin, unterwegs für Magazine, Marken und Produktionen weltweit.">Hair and make-up artist based in Hamburg and Berlin, working for magazines, brands and productions worldwide.</p>
+    <p class="ph" style="color:var(--grey);font-style:italic" data-en="A few sentences in Carolin's own words follow here." data-de="Hier folgen ein paar Sätze in Carolins eigenen Worten.">A few sentences in Carolin's own words follow here.</p>
+  </div>
+</section>
+
+<section class="contact wrap" id="contact">
+  <div class="kicker" data-en="Contact" data-de="Kontakt">Contact</div>
+  <a class="cmail" href="mailto:mail@carolinjarchow.com">mail@carolinjarchow.com</a>
+  <div class="cline">
+    <a href="tel:+491734952429">+49 173 495 24 29</a><span>·</span>
+    <a href="https://www.70seven.de" target="_blank" rel="noopener" data-en="Agency 70seven" data-de="Agentur 70seven">Agency 70seven</a><span>·</span>
+    <a href="https://www.instagram.com/carolinjarchow/" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© 2026 Carolin Jarchow</span>
+  <span data-en="Imprint · Privacy" data-de="Impressum · Datenschutz">Imprint · Privacy</span>
+</footer>
+
+<!-- Geschichte zum Bild -->
+<div class="story" id="story" aria-hidden="true">
+  <div class="pic"><img id="sImg" alt=""><div class="vbox" id="sVbox" hidden><video id="sVid" muted loop playsinline></video></div></div>
+  <div class="page">
+    <div class="no" id="sNo"></div>
+    <h3 id="sTitle"></h3>
+    <dl>
+      <dt data-en="Client" data-de="Kunde">Client</dt><dd class="ph" data-en="to follow" data-de="folgt">to follow</dd>
+      <dt data-en="Photographer" data-de="Fotograf">Photographer</dt><dd class="ph" data-en="to follow" data-de="folgt">to follow</dd>
+      <dt>Look</dt><dd id="sLook"></dd>
+    </dl>
+    <p class="ph" data-en="The story behind this shoot: Carolin adds two or three sentences here." data-de="Die Geschichte zum Shooting: Hier ergänzt Carolin zwei, drei Sätze.">The story behind this shoot: Carolin adds two or three sentences here.</p>
+    <div class="pn"><button id="prev">← <span data-en="Previous" data-de="Zurück">Previous</span></button><button id="next"><span data-en="Next" data-de="Weiter">Next</span> →</button></div>
+  </div>
+  <div class="ctrl"><button id="closeStory" data-en="Close ✕" data-de="Schließen ✕">Close ✕</button></div>
+</div>
+
+<div class="switch" role="group" aria-label="Vorschau">
+  <span>Einstieg</span>
+  <button class="on" data-hero="A">A · Schlicht</button>
+  <button data-hero="B">B · Titelblatt</button>
+</div>
+
+<script>
+const WORK = [
+  {f:'insta-04.jpg', t:'Undone', look:['editorial','natural']},
+  {f:'insta-03.jpg', t:'Fringe', look:['fashion','natural']},
+  {f:'insta-12.jpg', t:'Grey Days', look:['natural']},
+  {v:'reel-grey.mp4', t:'In Motion', look:['natural']},
+  {f:'insta-10.jpg', t:'Oversized', look:['fashion']},
+  {f:'insta-01.jpg', t:'Freckles & Silver', look:['beauty','natural']},
+  {f:'insta-11.jpg', t:'Sunglasses', look:['fashion','editorial']},
+  {f:'insta-08.jpg', t:'Platinum', look:['hair']},
+  {f:'insta-05.jpg', t:'Concrete', look:['fashion']},
+  {v:'reel-freckles.mp4', t:'Movement', look:['fashion','beauty']},
+  {f:'insta-02.jpg', t:'Volume', look:['hair']},
+  {f:'insta-09.jpg', t:'Soft Winter', look:['natural']},
+  {f:'insta-06.jpg', t:'Blue Hour', look:['beauty']},
+  {f:'insta-07.jpg', t:'Orange', look:['beauty']}
+];
+const LOOKS = {all:['All','Alle'], beauty:['Beauty','Beauty'], natural:['Natural','Natural'], hair:['Hair','Hair'], fashion:['Fashion','Fashion'], editorial:['Editorial','Editorial']};
+const REFS = ['Vogue','Mytheresa','Grazia','Zalando','Glamour','Net-a-Porter','Stern','Nivea','Gala','Swarovski','Madame','Douglas'];
+let lang = 'en';
+
+// Referenzen
+const track = document.getElementById('track');
+const refHtml = REFS.map(r=>`<span>${r}</span><i>·</i>`).join('');
+track.innerHTML = refHtml + refHtml;
+
+// Galerie
+const grid = document.getElementById('grid');
+grid.innerHTML = WORK.map((w,i)=>`<figure class="tile${w.big?' big':''}" data-i="${i}" data-look="${w.look.join(' ')}">${w.v ? `<video src="img/${w.v}" autoplay muted loop playsinline preload="metadata" aria-label="${w.t}"></video>` : `<img src="img/${w.f}" alt="${w.t}" loading="lazy">`}<figcaption class="cap"><span>${w.t}</span><span>${w.look.map(l=>LOOKS[l][0]).join(' · ')}</span></figcaption></figure>`).join('');
+// Videos ruhiger abspielen
+const SLOW = 0.6;
+document.querySelectorAll('.tile video').forEach(v=>{ v.defaultPlaybackRate = SLOW; v.playbackRate = SLOW; v.addEventListener('play', ()=>{ v.playbackRate = SLOW; }); });
+const filters = document.getElementById('filters');
+function renderFilters(active){
+  filters.innerHTML = Object.keys(LOOKS).map(k=>{
+    const n = k==='all' ? WORK.length : WORK.filter(w=>w.look.includes(k)).length;
+    return `<button data-f="${k}" class="${k===active?'on':''}">${LOOKS[k][lang==='en'?0:1]}<sup>${n}</sup></button>`;
+  }).join('');
+}
+let activeFilter = 'all';
+renderFilters(activeFilter);
+filters.addEventListener('click', e=>{
+  const b = e.target.closest('button'); if(b) applyFilter(b.dataset.f);
+});
+function applyFilter(k){
+  activeFilter = k; renderFilters(activeFilter);
+  const tiles = [...grid.children];
+  tiles.forEach(t=>t.classList.add('out'));
+  setTimeout(()=>{
+    tiles.forEach(t=>{
+      const hit = activeFilter==='all' || t.dataset.look.split(' ').includes(activeFilter);
+      t.classList.toggle('gone', !hit);
+    });
+    requestAnimationFrame(()=>tiles.forEach((t,k)=>{ if(!t.classList.contains('gone')) setTimeout(()=>t.classList.remove('out'), k*40); }));
+  }, 380);
+}
+
+// Inhaltsverzeichnis im Titelblatt: springt zur Galerie mit gesetztem Filter
+const toc = document.getElementById('toc');
+function renderToc(){ if(!toc) return;
+  toc.innerHTML = ['beauty','natural','hair','fashion','editorial'].map((k,i)=>{
+    const n = WORK.filter(w=>w.look.includes(k)).length;
+    return `<li><button data-f="${k}"><span>0${i+1}</span><span>${LOOKS[k][lang==='en'?0:1]}</span><span>${n}</span></button></li>`;
+  }).join('');
+}
+renderToc();
+if(toc) toc.addEventListener('click', e=>{
+  const b = e.target.closest('button'); if(!b) return;
+  applyFilter(b.dataset.f);
+  document.getElementById('work').scrollIntoView({behavior:'smooth'});
+});
+
+// Geschichte
+const story = document.getElementById('story');
+let cur = 0;
+function visible(){ return [...grid.children].filter(t=>!t.classList.contains('gone')).map(t=>+t.dataset.i); }
+function openStory(i){
+  cur = i; const w = WORK[i];
+  story.classList.remove('show');
+  const sImg = document.getElementById('sImg'), sVid = document.getElementById('sVid');
+  const sVbox = document.getElementById('sVbox');
+  if(w.v){ sImg.hidden = true; sVbox.hidden = false; sVid.src = 'img/'+w.v; sVid.defaultPlaybackRate = SLOW; sVid.playbackRate = SLOW; sVid.play().catch(()=>{}); }
+  else { sVid.pause(); sVbox.hidden = true; sImg.hidden = false; sImg.src = 'img/'+w.f; sImg.alt = w.t; }
+  document.getElementById('sTitle').textContent = w.t;
+  document.getElementById('sLook').textContent = w.look.map(l=>LOOKS[l][0]).join(', ');
+  const v = visible(); document.getElementById('sNo').textContent = String(v.indexOf(i)+1).padStart(2,'0')+' / '+String(v.length).padStart(2,'0');
+  story.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  requestAnimationFrame(()=>requestAnimationFrame(()=>story.classList.add('show')));
+}
+function closeStory(){ document.getElementById('sVid').pause(); story.classList.remove('show'); story.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+function step(d){ const v = visible(); const k = v.indexOf(cur); openStory(v[(k+d+v.length)%v.length]); }
+grid.addEventListener('click', e=>{ const t = e.target.closest('.tile'); if(t) openStory(+t.dataset.i); });
+document.getElementById('closeStory').onclick = closeStory;
+document.getElementById('prev').onclick = ()=>step(-1);
+document.getElementById('next').onclick = ()=>step(1);
+document.addEventListener('keydown', e=>{
+  if(!story.classList.contains('show')) return;
+  if(e.key==='Escape') closeStory(); if(e.key==='ArrowRight') step(1); if(e.key==='ArrowLeft') step(-1);
+});
+
+// Titelblatt aufschlagen
+const book = document.getElementById('book');
+function openBook(){ if(book.classList.contains('open')) return; book.classList.add('open'); setTimeout(()=>document.getElementById('work').scrollIntoView({behavior:'smooth'}), 750); }
+// Wieder ganz oben: Cover liegt wieder geschlossen da
+let armed = false;
+addEventListener('scroll', ()=>{ if(scrollY > 200) armed = true; if(armed && scrollY < 30){ armed = false; shutBook(); } }, {passive:true});
+function shutBook(){ book.classList.remove('open','done'); }
+document.getElementById('cover').onclick = openBook;
+document.getElementById('openBook').onclick = ()=> book.classList.contains('open') ? document.getElementById('work').scrollIntoView() : openBook();
+
+
+// Umschalter A/B
+document.querySelectorAll('.switch button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.switch button').forEach(x=>x.classList.toggle('on', x===b));
+  const B = b.dataset.hero==='B';
+  document.getElementById('heroA').hidden = B;
+  document.getElementById('heroB').hidden = !B;
+  if(!B){ book.classList.remove('open','done'); document.body.classList.remove('book-open'); }
+  window.scrollTo({top:0});
+});
+
+// Sprache
+function setLang(l){
+  lang = l; document.documentElement.lang = l;
+  document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('on', b.dataset.lang===l));
+  document.querySelectorAll('[data-en]').forEach(el=>{ el.innerHTML = el.dataset[l]; });
+  renderFilters(activeFilter); renderToc(); if(typeof alignAbout==='function') alignAbout();
+  document.querySelectorAll('.tile .cap span:last-child').forEach((s,k)=>{});
+}
+document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+
+// Einblenden beim Scrollen + Header-Linie
+const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }), {threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,k)=>{ el.style.transitionDelay = (el.classList.contains('tile') ? (k%3)*80 : 0)+'ms'; io.observe(el); });
+// Name oben ausblenden, solange das Titelblatt zu sehen ist
+const heroB = document.getElementById('heroB');
+new IntersectionObserver(es=>es.forEach(e=>document.body.classList.toggle('cover-visible', e.isIntersecting && !heroB.hidden)), {threshold:.35}).observe(heroB);
+document.querySelectorAll('.switch button').forEach(b=>b.addEventListener('click',()=>{ if(b.dataset.hero==='A') document.body.classList.remove('cover-visible'); else setTimeout(()=>document.body.classList.add('cover-visible'),50); }));
+function alignAbout(){
+  const at = document.getElementById('atext'), img = document.querySelector('.about img'), m = document.querySelector('.menu a');
+  if(innerWidth <= 760){ at.style.paddingLeft=''; return; }
+  const pad = m.getBoundingClientRect().left - img.getBoundingClientRect().right;
+  at.style.paddingLeft = Math.max(40, pad) + 'px';
+}
+addEventListener('resize', alignAbout); addEventListener('load', alignAbout); setTimeout(alignAbout, 300);
+const hdr = document.querySelector('header');
+addEventListener('scroll', ()=>hdr.classList.toggle('scrolled', scrollY>10), {passive:true});
+</script>
+</body>
+</html>
